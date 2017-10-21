@@ -56,12 +56,12 @@ F1-score : 0.881350
 ### Segment using optimized settings
 To segment the provided examples using the same settings used in the paper, use the following commands for Cos and Iceberg, respectively. Replace `<other-input-arguments>` with .
 
-** Cos: **
+**Cos:**
 ```
 pcl-segment-lettuce <other-input-arguments> --plant-height-th 4.8723 --leaf-smooth-th 4.1861 --leaf-inner-dist-th 0.15214 --leaf-outer-dist-th 0.18838 --leaf-min-size 542
 ```
 
-** Iceberg: **
+**Iceberg:**
 ```
 pcl-segment-lettuce <other-input-arguments> --plant-height-th 3.8647 --leaf-smooth-th 4.1719 --leaf-inner-dist-th 0.15304 --leaf-outer-dist-th 0.16766 --leaf-min-size 717
 ```
