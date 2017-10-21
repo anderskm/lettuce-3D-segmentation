@@ -1,4 +1,4 @@
-# pcl-extract-lettuce-features/
+# pcl-extract-lettuce-features
 `pcl-extract-lettuce-features` extracts features from a segmented lettuce-of-interest  3D point clouds.
 The extracted features are:
 
