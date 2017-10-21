@@ -3,7 +3,7 @@
 Below, the most common usage of `pcl-segment-lettuce` is presented.
 
 ## Usage
-The following sections show examples of how to use `pcl-segment-lettuce`. The examples are based on the provided cos-example and assumes, that a terminal window is opened in the `data` folder.
+The following sections show examples of how to use `pcl-segment-lettuce`. The examples are based on the provided examples and assume, that a terminal window is opened in one of the data example folder.
 
 ### Help
 Display help and input arguments:
@@ -15,7 +15,7 @@ pcl-segment-lettuce --help
 Show the point cloud and the segmentation steps in a interactive window, before closing the program.
 
 ```
-pcl-segment-lettuce --input-file cos-example/pc-scaled.pcd --plant-csv cos-example/center.csv --bed-neighbor-locations cos-example/pc-neighbor-centers.pcd --show-clouds 1
+pcl-segment-lettuce --input-file pc-scaled.pcd --plant-csv center.csv --bed-neighbor-locations pc-neighbor-centers.pcd --show-clouds 1
 ```
 
 Use `page-up`, `page-down`, `home` and `end` to skip between the steps in the segmentation process.
@@ -23,9 +23,9 @@ A short description of each step/point cloud is displayed in the window title.
 For more information about the functionality of the visualizer, press `h` while it is open.
 
 ### Segment and save lettuce-of-interest
-Segment lettuce-of-interest from a point cloud (cos-example/pc-scaled.pcd) and save the segmented cloud (cos-example/pc-plant.pcd).
+Segment lettuce-of-interest from a point cloud `pc-scaled.pcd` and save the segmented cloud `pc-plant.pcd`.
 ```
-pcl-segment-lettuce --input-file cos-example/pc-scaled.pcd --plant-csv cos-example/center.csv --bed-neighbor-locations cos-example/pc-neighbor-centers.pcd --output-file cos-example/pc-plant.pcd
+pcl-segment-lettuce --input-file pc-scaled.pcd --plant-csv center.csv --bed-neighbor-locations pc-neighbor-centers.pcd --output-file pc-plant.pcd
 ```
 
 ### Segment and compare to ground truth labels
@@ -33,7 +33,7 @@ Segment a point cloud and compare it to a labelled point cloud.
 Providing a labelled point cloud, outputs a confusion matrix as well as precision, recall and F1-score for the provided point cloud.
 
 ```
-pcl-segment-lettuce --input-file cos-example/pc-scaled.pcd --plant-csv cos-example/center.csv --bed-neighbor-locations cos-example/pc-neighbor-centers.pcd --labels cos-example/labels.pcd
+pcl-segment-lettuce --input-file pc-scaled.pcd --plant-csv center.csv --bed-neighbor-locations pc-neighbor-centers.pcd --labels labels.pcd
 ```
 
 Example output:
