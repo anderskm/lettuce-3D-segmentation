@@ -26,7 +26,7 @@ The programs were developed in [Qt Creator (v5.7)](https://www.qt.io/) and using
 ## Installation
 
 1. Download or clone this repository
-2. For each program in the `src` folder, create a new project in Qt Creator and build the program:
+2. For each program in the [`src`](src/) folder, create a new project in Qt Creator and build the program:
     1. When creating a new project, the following settings were used:
         * Project type: "Non-Qt-Project" and "Plant C++ Application"
         * Build system: "CMake"
