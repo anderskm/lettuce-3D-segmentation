@@ -25,23 +25,6 @@ void keyboardEventOccurred (const pcl::visualization::KeyboardEvent &event,
 {
   pcl::visualization::PCLVisualizer *viewer = static_cast<pcl::visualization::PCLVisualizer *> (viewer_void);
 
-  /*
-  if (event.keyDown())
-    {
-      pcl::console::print_highlight("Key pressed: "); pcl::console::print_value("Down\n");
-    }
-  if (event.keyUp())
-    {
-      pcl::console::print_highlight("Key released: "); pcl::console::print_value("Up\n");
-    }
-
-  pcl::console::print_info("  Key symbol: "); pcl::console::print_value("%s\n",event.getKeySym().c_str());
-  pcl::console::print_info("  Key code: "); pcl::console::print_value("%d\n",event.getKeyCode());
-  pcl::console::print_info("  Ctrl : "); pcl::console::print_value("%d\n", event.isCtrlPressed());
-  pcl::console::print_info("  Alt  : "); pcl::console::print_value("%d\n", event.isAltPressed());
-  pcl::console::print_info("  Shift: "); pcl::console::print_value("%d\n", event.isShiftPressed());
-  */
-
   if (event.keyDown())
     {
       if (!event.getKeySym().compare("v")) // Change viewing
@@ -86,8 +69,6 @@ int main(int argc, char *argv[])
 
   float labelRadius = 0.16; // m
   bool colorByLabel = false;
-//  float betweenRowSpacing = 0.6;
-//  float inRowSpacing = 0.3;
 
   std::vector<std::string> classes;
   classes.push_back("Unknown"); // DO NOT INSERT; ONLY ADD AT THE END!!
@@ -97,7 +78,6 @@ int main(int argc, char *argv[])
   classesIterator = classes.begin();
 
   std::string filename = argv[1];
-  //std::string centerCSV = argv[2];
   std::string filenameOut;
   bool saveOutput = false;
   if (argc >= 3) {
@@ -111,59 +91,6 @@ int main(int argc, char *argv[])
       pcl::console::print_info("Output file: ");
       pcl::console::print_value("%s\n", filenameOut.c_str());
     }
-//  pcl::console::print_info("Center CSV file: ");
-//  pcl::console::print_value("%s\n", centerCSV.c_str());
-
-//  float centerX;
-//  float centerY;
-//  float centerZ;
-//  FILE * centerFile;
-//  int coordinateStringMaxLength = 100;
-//  char mystring [coordinateStringMaxLength];
-//  centerFile = fopen (centerCSV.c_str() , "r");
-//  if (centerFile != NULL)
-//    {
-//      if ( fgets(mystring , coordinateStringMaxLength , centerFile) != NULL )
-//        {
-//          // Convert to string
-//          std::string coordinateString;
-//          for (int i = 0; i < coordinateStringMaxLength; i++)
-//            {
-//              coordinateString.push_back(mystring[i]);
-//            }
-//          // Only grab first line minus newline character
-//          coordinateString = coordinateString.substr(0,coordinateString.find("\n"));
-
-//          // Grab first coordinate
-//          int firstDelimiterIdx = coordinateString.find(",",0);
-//          std::string centerXstring = coordinateString.substr(0,firstDelimiterIdx);
-//          // Grab second coordinate
-//          int secondDelimiterIdx = coordinateString.find(",",firstDelimiterIdx+1);
-//          std::string centerYstring = coordinateString.substr(firstDelimiterIdx+1,secondDelimiterIdx-firstDelimiterIdx-1);
-//          // Grab third coordinate
-//          std::string centerZstring = coordinateString.substr(secondDelimiterIdx+1,-1);
-
-//          // Store center as floats
-//          centerX = strtof(centerXstring.c_str(),NULL);
-//          centerY = strtof(centerYstring.c_str(),NULL);
-//          centerZ = strtof(centerZstring.c_str(),NULL);
-//        }
-//      else
-//        {
-//          pcl::console::print_info("Could not read CSV-file!\n");
-//          return 0;
-//        }
-//    }
-//  else
-//    {
-//      pcl::console::print_info("Could not open CSV-file for reading!\n");
-//      return 0;
-//    }
-//  fclose (centerFile);
-//  pcl::console::print_info("Center point: ");
-//  pcl::console::print_value("(%f,",centerX);
-//  pcl::console::print_value("%f,",centerY);
-//  pcl::console::print_value("%f)\n",centerZ);
 
   pcl::console::print_info("Output file: ");
   pcl::PointCloud<pcl::PointXYZRGBL>::Ptr cloudLabels (new pcl::PointCloud<pcl::PointXYZRGBL>);
@@ -213,14 +140,10 @@ int main(int argc, char *argv[])
   boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("Label point cloud"));
   viewer->setBackgroundColor(0.08627451,0.08627451,0.11372549); // Eigengrau
   pcl::visualization::PointCloudColorHandlerRGBField<pcl::PointXYZRGBL> rgb(cloudLabels);
-  //viewer->addPointCloud<pcl::PointXYZRGBNormal> (cloudFull, rgb, "Cloud");
-  //viewer->addPointCloud<pcl::PointXYZRGBL> (cloudLabels, rgb, "Cloud");
-  //viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "Cloud");
   viewer->initCameraParameters ();
   viewer->setCameraPosition(0.0, 0.0, 2.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0);
   viewer->registerPointPickingCallback(pointPickingEvent, (void*)viewer.get());
   viewer->registerKeyboardCallback (keyboardEventOccurred, (void*)viewer.get());
-  //_viewer->registerPointPickingCallback(singleViewer_pointPickingEvent, (void*)_viewer.get());
 
   bool updateCloud = true; // Update in first loop
   bool updateText = true; // Add the text during first loop
