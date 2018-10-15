@@ -1,5 +1,5 @@
 # Segmentation of Lettuce in Coloured 3D Point Clouds for Fresh Weight Estimation
-This repository contains the source code for the novel segmentation method of lettuce in coloured 3D point clouds presented in journal paper [Segmentation of Lettuce in Coloured 3D Point Clouds for Fresh Weight Estimation](https://github.com/anderskm/lettuce-3D-segmentation).
+This repository contains the source code for the novel segmentation method of lettuce in coloured 3D point clouds presented in journal paper [Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation](https://doi.org/10.1016/j.compag.2018.09.010).
 
 The [`src`](src/) folder contains the source code along with Makefiles and program descriptions.
 
@@ -7,14 +7,21 @@ The [`data`](data/) folder contains examples of coloured 3D point clouds of Cos 
 
 ## Citation
 If you use this code in your research or elsewhere, please cite/reference the following paper:
-[Segmentation of Lettuce in Coloured 3D Point Clouds for Fresh Weight Estimation](https://github.com/anderskm/lettuce-3D-segmentation)
+[Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation](https://doi.org/10.1016/j.compag.2018.09.010)
 ```
-@article{Mortensen2017,
-  title={Segmentation of Lettuce in Coloured 3D Point Clouds for Fresh Weight Estimation},
-  author={Mortensen, Anders Krogh and Bender, Asher and Whelan, Brett and Barbour, Margaret and Sukkarieh, Salah and Karstoft, Henrik and Gislum, René},
-  journal={TBD},
-  year={2017}
+@article{Mortensen2018,
+title = "Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation",
+author = "Anders Krogh Mortensen and Asher Bender and Brett Whelan and Margaret M. Barbour and Salah Sukkarieh and Henrik Karstoft and René Gislum",
+journal = "Computers and Electronics in Agriculture",
+volume = "154",
+pages = "373 - 381",
+year = "2018",
+issn = "0168-1699",
+doi = "https://doi.org/10.1016/j.compag.2018.09.010",
+url = "http://www.sciencedirect.com/science/article/pii/S0168169917314102",
+keywords = "Leafy vegetables, Photogrammetry, Structure from motion, Biomass, Computer vision, Agricultural robotics"
 }
+
 ```
 
 ## Requirements
