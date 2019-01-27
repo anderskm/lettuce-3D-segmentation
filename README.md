@@ -10,16 +10,16 @@ If you use this code in your research or elsewhere, please cite/reference the fo
 [Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation](https://doi.org/10.1016/j.compag.2018.09.010)
 ```
 @article{Mortensen2018,
-title = "Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation",
-author = "Anders Krogh Mortensen and Asher Bender and Brett Whelan and Margaret M. Barbour and Salah Sukkarieh and Henrik Karstoft and René Gislum",
-journal = "Computers and Electronics in Agriculture",
-volume = "154",
-pages = "373 - 381",
-year = "2018",
-issn = "0168-1699",
-doi = "https://doi.org/10.1016/j.compag.2018.09.010",
-url = "http://www.sciencedirect.com/science/article/pii/S0168169917314102",
-keywords = "Leafy vegetables, Photogrammetry, Structure from motion, Biomass, Computer vision, Agricultural robotics"
+    title = "Segmentation of lettuce in coloured 3D point clouds for fresh weight estimation",
+    author = "Anders Krogh Mortensen and Asher Bender and Brett Whelan and Margaret M. Barbour and Salah Sukkarieh and Henrik Karstoft and René Gislum",
+    journal = "Computers and Electronics in Agriculture",
+    volume = "154",
+    pages = "373 - 381",
+    year = "2018",
+    issn = "0168-1699",
+    doi = "https://doi.org/10.1016/j.compag.2018.09.010",
+    url = "http://www.sciencedirect.com/science/article/pii/S0168169917314102",
+    keywords = "Leafy vegetables, Photogrammetry, Structure from motion, Biomass, Computer vision, Agricultural robotics"
 }
 
 ```
